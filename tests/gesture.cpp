@@ -15,7 +15,7 @@ CheckpointResult outcome = CheckpointResult::success;
 char message[32];
 CheckpointResult perform(const Context&, CheckpointCommand command) { ++calls; last = command; return outcome; }
 void notify(const char* text) { ++popups; std::snprintf(message, sizeof message, "%s", text); }
-void key(u32 key, bool pressed = true, bool accepted = true, u32 modifier = keys::project) {
+void key(u32 key, bool pressed = true, bool accepted = true, u32 modifier = keys::metronome) {
     const Context context = {};
     const Actions actions(nullptr, notify, nullptr, perform);
     checkpoint::hooks.queued_control(context, Control(key, pressed, accepted, false, 0, modifier), actions);

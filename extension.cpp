@@ -3,7 +3,7 @@
 namespace opxy { namespace extensions { namespace checkpoint {
 namespace {
 void control(const Context& context, const Control& event, const Actions& actions) {
-    if (!event.accepted || !event.pressed || event.modifier != keys::project) return;
+    if (!event.accepted || !event.pressed || event.modifier != keys::metronome) return;
     CheckpointCommand command;
     const char* done;
     if (event.key == keys::plus) {

@@ -3,14 +3,14 @@
 A temporary scene checkpoint for OP-XY OS 1.2.1, using the checkpoint-capable
 Open-XY SDK. Enable this extension when building firmware.
 
-| Hold Project, then press | Action |
+| Hold Metronome, then press | Action |
 | --- | --- |
 | plus | Store or replace the checkpoint |
 | minus | Recall the checkpoint |
 | Record | Recover the state before the last recall |
 
-Key repeats do nothing. A Project tap opens the stock project view on release.
-Other Project combinations replay through stock. Browser, naming and sampling
+Key repeats do nothing. An ordinary Metronome tap replays through stock on release.
+Other Metronome combinations replay through stock. Browser, naming and sampling
 screens keep their controls. Shift + Record remains stock's single-track undo.
 
 The checkpoint holds the scene's active instrument and auxiliary patterns,
