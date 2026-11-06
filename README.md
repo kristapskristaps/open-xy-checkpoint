@@ -1,7 +1,8 @@
 # Performance checkpoint
 
 A temporary scene checkpoint for OP-XY OS 1.2.1, using the checkpoint-capable
-Open-XY SDK. Enable this extension when building firmware.
+Open-XY SDK. Enable this extension when building firmware. It requires the
+checkpoint contract proposed in [Open-XY SDK PR #436](https://github.com/etcetc000/open-xy/pull/436).
 
 | Hold Metronome, then press | Action |
 | --- | --- |
@@ -26,8 +27,9 @@ or creating a project clears both states. Failed stores preserve the checkpoint.
 
 Recall refreshes each track through stock's pattern-paste path at the current
 clock position. Held voices may be released as during stock pattern paste.
-A redundant recall preserves the useful recovery state. Recovery is one
-operation, with no redo. Finish recording before using any checkpoint gesture.
+A redundant recall preserves the useful recovery state. Recovery works once per
+reload and does not toggle between states. Finish recording before using any
+checkpoint gesture.
 
 Shared patterns and linked sound sources also affect other scenes that use
 them. Tempo, song arrangement, global mixer/master settings, sample files and
@@ -41,8 +43,9 @@ data has a 384 KiB compressed limit; exceeding either capacity refuses the actio
 without replacing the checkpoint or changing live patterns.
 
 ```
-python ../open-xy-checkpoint/sdk.py test --extension .
-python ../open-xy-checkpoint/sdk.py build --machine <machine-folder> --extension . --stock-os <external-stock>/os.ldr --out <external-build-folder>
+python ../open-xy/sdk.py test --extension .
+python ../open-xy/sdk.py build --machine <machine-folder> --extension . --stock-os <external-stock>/os.ldr --out <external-build-folder>
 ```
 
-Hardware acceptance is pending until QA.md passes on the exact built image.
+The owner accepted the core store/recall/recovery workflow on hardware.
+[QA.md](QA.md) records the tested image and remaining checks.

@@ -3,6 +3,18 @@
 Record SDK/extension commits, candidate OS SHA-256 and layout. Test a disposable
 project containing synth, sample, auxiliary and SDK-machine tracks.
 
+The owner reported "works great!" for the core store/recall/recovery workflow
+on 2026-11-06, after confirming the modifier is Metronome. The installed image
+contained the same 26 Hundekraft/Halo machines, source hashes and machine IDs as
+the prior build; only the firmware file was transferred, with backup and readback.
+
+- SDK: `4c35df7f9b238de3424d27d126ec739bb89938fc`.
+- Extension: `5860a71` (subsequent changes correct the modifier's source name and documentation).
+- OS SHA-256: `facf403a9a43de8ee2280ea4cbe70d28d6466c672e78bbf60c659ddbd5f872f2`.
+
+This user acceptance does not establish the detailed cases below or recall timing.
+The final source must still pass these checks on its exact image.
+
 - [ ] Metronome tap, Metronome + M2, Shift + Metronome and browser/naming controls
   retain stock behavior. Check both orders of releasing every chord.
 - [ ] Metronome + plus stores once; holding plus does not repeatedly store.
